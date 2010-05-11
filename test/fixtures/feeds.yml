@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  uri: MyString
+  title_xpath: MyString
+
+two:
+  title: MyString
+  uri: MyString
+  title_xpath: MyString

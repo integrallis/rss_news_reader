@@ -1,0 +1,10 @@
+log/*.log
+tmp/**/*
+doc/api
+doc/app
+nbproject
+.DS_Store
+Thumbs.db
+**/.svn
+db/*.sqlite3
+downloads/*.txt

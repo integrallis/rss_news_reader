@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @feed.title %>
+</p>
+
+<p>
+  <b>Uri:</b>
+  <%=h @feed.uri %>
+</p>
+
+<p>
+  <b>Title xpath:</b>
+  <%=h @feed.title_xpath %>
+</p>
+
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>
