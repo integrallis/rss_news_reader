@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.xml
@@ -81,5 +84,11 @@ class FeedsController < ApplicationController
       format.html { redirect_to(feeds_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def titles
+    @feed = Feed.find(params[:id])
+    doc = Nokogiri::XML(open(@feed.uri))
+    @headlines = doc.search(@feed.title_xpath).map{ |tag| tag.inner_text }
   end
 end

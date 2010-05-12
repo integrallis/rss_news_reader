@@ -1,0 +1,13 @@
+<h1>Headlines</h1>
+<h2><%= @feed.title %></h2>
+
+<ul>
+<% @headlines.each do |title| %>
+	<li><%=h title %></li>
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'Back', feeds_path %>
+
