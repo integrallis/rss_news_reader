@@ -1,4 +1,19 @@
-<h1>Listing feeds</h1>
+<h1>Public Feeds</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+<% Feed.find(:all, :conditions => {:published => true}).each do |feed| %>
+  <tr>
+    <td><%=h feed.title %></td>
+    <td><%= link_to 'Headlines', :action => 'titles', :id => feed %></td>
+  </tr>
+<% end %>
+</table>
+
+<h1>My feeds</h1>
 
 <table>
   <tr>
