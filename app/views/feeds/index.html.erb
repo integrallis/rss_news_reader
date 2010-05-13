@@ -5,7 +5,7 @@
     <th>Title</th>
   </tr>
 
-<% @published_feeds.each do |feed| %>
+<% Feed.published_feeds.each do |feed| %>
   <tr>
     <td><%=h feed.title %></td>
     <td><%= link_to 'Headlines', :action => 'titles', :id => feed %></td>
