@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100511230550) do
+ActiveRecord::Schema.define(:version => 20100513180740) do
 
   create_table "feeds", :force => true do |t|
     t.string   "title"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20100511230550) do
     t.string   "title_xpath"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published"
   end
 
 end

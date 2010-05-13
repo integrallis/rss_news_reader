@@ -5,6 +5,7 @@
     <th>Title</th>
     <th>Uri</th>
     <th>Title xpath</th>
+    <th>Published</th>
   </tr>
 
 <% @feeds.each do |feed| %>
@@ -12,6 +13,7 @@
     <td><%=h feed.title %></td>
     <td><%=h feed.uri %></td>
     <td><%=h feed.title_xpath %></td>
+    <td><%=h feed.published %></td>
     <td><%= link_to 'Show', feed %></td>
     <td><%= link_to 'Headlines', :action => 'titles', :id => feed %></td>
     <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
