@@ -5,7 +5,7 @@
     <th>Title</th>
   </tr>
 
-<% Feed.find(:all, :conditions => {:published => true}).each do |feed| %>
+<% @published_feeds.each do |feed| %>
   <tr>
     <td><%=h feed.title %></td>
     <td><%= link_to 'Headlines', :action => 'titles', :id => feed %></td>

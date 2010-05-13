@@ -6,6 +6,7 @@ class FeedsController < ApplicationController
   # GET /feeds.xml
   def index
     @feeds = Feed.all
+    @published_feeds = Feed.find(:all, :conditions => {:published => true})
 
     respond_to do |format|
       format.html # index.html.erb
