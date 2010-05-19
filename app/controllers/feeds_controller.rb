@@ -2,6 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 
 class FeedsController < ApplicationController
+  before_filter :require_user
+  
   # GET /feeds
   # GET /feeds.xml
   def index
