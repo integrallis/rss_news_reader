@@ -1,15 +1,15 @@
-<h1>New user</h1>
+<h1>Register</h1>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<% form_for @user, :url => account_path do |f| %>
+	<%= f.error_messages %>
+	<%= f.label :email %><br />
+	<%= f.text_field :email %><br />
+	<br />
+	<%= f.label :password, f.object.new_record? ? nil : "Change password" %><br />
+	<%= f.password_field :password %><br />
+	<br />
+	<%= f.label :password_confirmation %><br />
+	<%= f.password_field :password_confirmation %><br />
+	<%= f.submit "Register" %>
 <% end %>
 
-<%= link_to 'Back', users_path %>
