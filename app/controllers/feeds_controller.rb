@@ -7,7 +7,7 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.xml
   def index
-    @feeds = Feed.all
+    @feeds = current_user.feeds.find(:all, :order => "created_at")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -39,18 +39,19 @@ class FeedsController < ApplicationController
 
   # GET /feeds/1/edit
   def edit
-    @feed = Feed.find(params[:id])
+    @feed = current_user.feeds.find(params[:id])
   end
 
   # POST /feeds
   # POST /feeds.xml
   def create
     @feed = Feed.new(params[:feed])
+    @feed.user = current_user
 
     respond_to do |format|
       if @feed.save
         flash[:notice] = 'Feed was successfully created.'
-        format.html { redirect_to(@feed) }
+        format.html { redirect_to(user_feeds_path(current_user)) }
         format.xml  { render :xml => @feed, :status => :created, :location => @feed }
       else
         format.html { render :action => "new" }
@@ -62,12 +63,12 @@ class FeedsController < ApplicationController
   # PUT /feeds/1
   # PUT /feeds/1.xml
   def update
-    @feed = Feed.find(params[:id])
+    @feed = current_user.feeds.find(params[:id])
 
     respond_to do |format|
       if @feed.update_attributes(params[:feed])
         flash[:notice] = 'Feed was successfully updated.'
-        format.html { redirect_to(@feed) }
+        format.html { redirect_to(user_feeds_path(current_user)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,7 +84,7 @@ class FeedsController < ApplicationController
     @feed.destroy
 
     respond_to do |format|
-      format.html { redirect_to(feeds_url) }
+      format.html { redirect_to(user_feeds_path(current_user)) }
       format.xml  { head :ok }
     end
   end

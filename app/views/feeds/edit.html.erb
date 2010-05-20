@@ -1,6 +1,6 @@
 <h1>Editing feed</h1>
 
-<% form_for(@feed) do |f| %>
+<% form_for(@feed, :url => user_feed_path(current_user,@feed)) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -24,6 +24,6 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @feed %> |
-<%= link_to 'Back', feeds_path %>
+<%= link_to 'Show', user_feed_path(current_user, @feed) %> |
+<%= link_to 'Back', user_feeds_path(current_user) %>
 

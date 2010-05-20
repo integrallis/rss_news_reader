@@ -29,15 +29,15 @@
     <td><%=h feed.uri %></td>
     <td><%=h feed.title_xpath %></td>
     <td><%=h feed.published %></td>
-    <td><%= link_to 'Show', feed %></td>
-    <td><%= link_to 'Headlines', :action => 'titles', :id => feed %></td>
-    <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-    <td><%= link_to 'Destroy', feed, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', user_feed_path(current_user, feed) %></td>
+    <td><%= link_to 'Headlines', titles_user_feed_path(current_user, feed) %></td>
+    <td><%= link_to 'Edit', edit_user_feed_path(current_user, feed) %></td>
+    <td><%= link_to 'Destroy', user_feed_path(current_user, feed), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New feed', new_feed_path %>
+<%= link_to 'New feed', new_user_feed_path(current_user) %>
 

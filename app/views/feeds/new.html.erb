@@ -1,6 +1,6 @@
 <h1>New feed</h1>
 
-<% form_for(@feed) do |f| %>
+<% form_for(@feed, :url => user_feeds_url(current_user)) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -24,5 +24,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', feeds_path %>
+<%= link_to 'Back', user_feeds_path(current_user) %>
 

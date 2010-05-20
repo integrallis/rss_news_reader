@@ -19,6 +19,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
-<%= link_to 'Back', feeds_path %>
+<%= link_to 'Edit', edit_user_feed_path(current_user, @feed) %> |
+<%= link_to 'Back', user_feeds_path(current_user) %>
 
