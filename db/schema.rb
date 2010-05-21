@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20100518142424) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "published"
+    t.integer  "user_id"
   end
 
   create_table "people", :force => true do |t|
@@ -33,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20100518142424) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"

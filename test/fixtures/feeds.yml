@@ -1,11 +1,24 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+bbc:
+  id: 1
+  title: BBC News
+  uri: http://news.bbc.co.uk/rss/newsonline_uk_edition/world/rss.xml
+  title_xpath: //title
+  user: stephan
+
+cnn:
+  title: CNN Top Stories
+  uri: http://rss.cnn.com/rss/cnn_topstories.rss
+  title_xpath: //item/title
+  user: stephan
 
 one:
-  title: MyString
+  title: MyString2
   uri: MyString
   title_xpath: MyString
+  user: stephan
 
 two:
   title: MyString
   uri: MyString
   title_xpath: MyString
+  user: stephan
